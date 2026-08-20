@@ -33,7 +33,7 @@ if not public_ssh_key or public_ssh_key.strip() == "":
     exit(1)
 
 # Availability Domains to cycle through
-ads = ["uufj:PHX-AD-1", "uufj:PHX-AD-2", "uufj:PHX-AD-3"]
+ads = ["SbZQ:EU-FRANKFURT-1-AD-1", "SbZQ:EU-FRANKFURT-1-AD-2", "SbZQ:EU-FRANKFURT-1-AD-3"]
 
 total_attempts = 60 
 
@@ -48,8 +48,8 @@ for i in range(1, total_attempts + 1):
             availability_domain=current_ad,
             shape="VM.Standard.A1.Flex",
             shape_config=oci.core.models.LaunchInstanceShapeConfigDetails(
-                ocpus=4,
-                memory_in_gbs=24
+                ocpus=2,
+                memory_in_gbs=12
             ),
             source_details=oci.core.models.InstanceSourceViaImageDetails(
                 source_type="image",
